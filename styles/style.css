@@ -1,0 +1,91 @@
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px auto;
+}
+
+section {
+  width: 300px;
+  padding: 5px 0;
+  border: solid 2px black;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+}
+
+.result {
+  align-items: center;
+}
+
+.stats h2 {
+  align-self: center;
+}
+
+div:nth-child(even),
+div:nth-child(even) input {
+  background-color: #dbedb9;
+}
+
+tr:nth-child(even) {
+  background-color: #dbedb9;
+}
+
+thead td {
+  background-color: #dbedb9;
+  font-weight: bold;
+}
+
+table {
+  width: 284px;
+  text-align: center;
+  margin: 0 16px 16px 16px;
+}
+
+div {
+  margin: 0 5px 5px 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+input {
+  text-align: end;
+  align-self: flex-end;
+}
+
+#diceDmg {
+  width: 150px;
+}
+
+input,
+select {
+  width: 55px;
+  border: none;
+  padding-right: 12px;
+}
+
+label {
+  padding: 2px 5px;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: larger;
+}
+
+h2 {
+  font-size: large;
+  text-align: center;
+  background-color: white;
+  border: double black;
+  position: relative;
+  bottom: 18px;
+  width: 90px;
+}

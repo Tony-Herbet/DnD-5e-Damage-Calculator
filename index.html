@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DnD 5e Damage Calculator</title>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body id="app">
+    <header>
+      <h1>Damage Calculator for D&D 5e</h1>
+    </header>
+    <section class="stats">
+      <h2>Stats</h2>
+      <div>
+        <label for="hitModifier">Hit modifier</label>
+        <input type="number" id="hitModifier" v-model="hitModifier" />
+      </div>
+      <div>
+        <label for="advantage">Advantage?</label>
+        <input
+          type="checkbox"
+          name="advantage"
+          id="advantage"
+          @change="toggleAdvantage"
+        />
+      </div>
+      <div>
+        <label for="elvenAccuracy">Elven accuracy?</label>
+        <input
+          type="checkbox"
+          name="elvenAccuracy"
+          id="elvenAccuracy"
+          @change="toggleElvenAccuracy"
+        />
+      </div>
+      <div>
+        <label for="diceDmg">All dice</label>
+        <input type="text" id="diceDmg" v-model="dice" @change="diceMath" />
+      </div>
+      <div>
+        <label for="perHitDmgMod">Per-hit damage modifiers</label>
+        <input type="number" id="perHitDmgMod" v-model="perHitDmgMod" />
+      </div>
+      <div>
+        <label for="criticalRange">Critical range</label>
+        <select
+          name="criticalRange"
+          id="criticalRange"
+          v-model="criticalChance"
+        >
+          <option value="0.95" selected>20</option>
+          <option value="0.90">19</option>
+          <option value="0.85">18</option>
+        </select>
+      </div>
+    </section>
+    <section class="result">
+      <h2>Result</h2>
+      <table>
+        <thead>
+          <tr>
+            <td>AC</td>
+            <td>Damage</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="AC in 16">
+            <td>{{ AC+9 }}</td>
+            <td>{{damageCalculation(AC+9)}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>
